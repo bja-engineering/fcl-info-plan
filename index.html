@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+		<meta name="description" content="FCL-Info-Plan">
+		<meta name="author" content="Alex">
+		<!-- <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1,minimum-scale=1, shrink-to-fit=no, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="translucent-black">
+		<meta name="apple-mobile-web-app-title" content="Livre Audio - Se presenter"> -->
+		
+		<title>Future Care Lab Info-Plan</title>
+		
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<!-- <link rel="shortcut icon" href="img/logo.ico"> -->
+		
+		<script type="text/javascript" src="logic.js"></script>
+	</head>
+	
+	<body>
+	
+		<audio id="player1" src="audio/fcl-bad.mp3"></audio>
+		<audio id="player2" src="audio/fcl-flur.mp3"></audio>
+		<audio id="player3" src="audio/fcl-schlafen.mp3"></audio>
+		<audio id="player4" src="audio/fcl-wohnen-essen.mp3"></audio>
+	
+		<!-- <h1 style="text-align: center; font-family: Arial,Helvetica Neue,Helvetica,sans-serif;">Das Future Care Lab AAL-Smart-Home</h1> -->
+	
+		<section id="section-left">
+	
+			<div class="parent">
+		
+				<img src="img/fcl-bg.png" />
+			
+				<!-- Alte Variante mit Ankern und Images -->
+				<!-- <div class="inner" id="touch-button-schlafen"> -->
+					<!-- <a href="" onClick="turnOverlayOn()"><img class="touch-button" src="touch-button.png" /></a> -->
+				<!-- </div> -->
+			
+				<!-- Ab hier neue Variante mit Buttons -->
+				<button class="inner touch-button" id="touch-button-schlafen" title="Schlafzimmer" onClick="turnOverlayOn('overlay-schlafen'); resetAndPlay('player3')" onmouseover="turnBoxOn('box-schlafen')" onmouseout="turnBoxOff('box-schlafen')"></button>
+			
+				<button class="inner touch-button" id="touch-button-flur" title="Flur" onClick="turnOverlayOn('overlay-flur'); resetAndPlay('player2')" onmouseover="turnBoxOn('box-flur')" onmouseout="turnBoxOff('box-flur')"></button>
+			
+				<button class="inner touch-button" id="touch-button-bad" title="Badezimmer" onClick="turnOverlayOn('overlay-bad'); resetAndPlay('player1')" onmouseover="turnBoxOn('box-bad')" onmouseout="turnBoxOff('box-bad')"></button>
+			
+				<button class="inner touch-button" id="touch-button-wohnen" title="Wohnzimmer" onClick="turnOverlayOn('overlay-wohnen'); resetAndPlay('player4')" onmouseover="turnBoxOn('box-wohnen')" onmouseout="turnBoxOff('box-wohnen')"></button>
+			
+				<button class="inner touch-button" id="touch-button-essen" title="Esszimmer" onClick="turnOverlayOn('overlay-essen'); resetAndPlay('player4')" onmouseover="turnBoxOn('box-essen')" onmouseout="turnBoxOff('box-essen')"></button>
+			
+				<div class="overlay w3-animate-opacity" id="overlay-schlafen" onClick="turnAllOverlaysOff(); stopAllAudios()">
+					<div class="overlay-text">
+						<h1>FCL-Schlafzimmer</h1>
+						<img src="img/fcl-schlafen.jpg" />
+						<ul>
+							<li>Elektromotorisch einstellbares Niederflur-Pflegebett</li>
+							<li>PAUL "Persönlicher Assistent für Unterstütztes Leben" Senioren-PC</li>
+							<li>Sensor-Fußmatten und diverse weitere Sensoren</li>
+						</ul>
+						<p class="blink_me" style="text-align: center">Klicken Sie hier, um das Overlay zu verlassen.</p>
+					</div>
+				</div>
+			
+				<div class="overlay w3-animate-opacity" id="overlay-flur" onClick="turnAllOverlaysOff(); stopAllAudios()">
+					<div class="overlay-text">
+						<h1>FCL-Flur</h1>
+						<img style="float: left; display: block;" src="img/fcl-flur.jpg" />
+						<ul style="margin-left: 300px;">
+							<li>LED-Lichtfeedbacksystem und Audio-Feedbacksystem</li>
+							<li>"Circadianes" Tageslicht-Beleuchtungssystem</li>
+							<li>Schutzengelsystem und diverse weitere Sensoren</li>
+						</ul>
+						<p class="blink_me" style="text-align: center">Klicken Sie hier, um das Overlay zu verlassen.</p>
+					</div>
+				</div>
+			
+				<div class="overlay w3-animate-opacity" id="overlay-bad" onClick="turnAllOverlaysOff(); stopAllAudios()">
+					<div class="overlay-text">
+						<h1>FCL-Badezimmer</h1>
+						<img src="img/fcl-bad.jpg" />
+						<ul>
+							<li>Elektromotorisch einstellbare Pflege-Badewanne</li>
+							<li>"Smart Mirror"-Display im Spiegel</li>
+							<li>Sensor-Fußmatten und diverse weitere Sensoren/Aktoren</li>
+						</ul>
+						<p class="blink_me" style="text-align: center">Klicken Sie hier, um das Overlay zu verlassen.</p>
+					</div>
+				</div>
+			
+				<div class="overlay w3-animate-opacity" id="overlay-wohnen" onClick="turnAllOverlaysOff(); stopAllAudios()">
+					<div class="overlay-text">
+						<h1>FCL-Wohnbereich</h1>
+						<img src="img/fcl-wohnen.jpg" />
+						<ul>
+							<li>SensFloor 2D und Ubisense 3D Indoor-Lokalisierungssysteme</li>
+							<li>Multitouch Surface Computer als Wohnzimmertisch</li>
+							<li>Telepräsenz- und Companion-Roboter</li>
+						</ul>
+						<p class="blink_me" style="text-align: center">Klicken Sie hier, um das Overlay zu verlassen.</p>
+					</div>
+				</div>
+			
+				<div class="overlay w3-animate-opacity" id="overlay-essen" onClick="turnAllOverlaysOff(); stopAllAudios()">
+					<div class="overlay-text">
+						<h1>FCL-Essbereich</h1>
+						<img src="img/fcl-essen.jpg" />
+						<ul>
+							<li>Elektromotorisch einstellbare "Inclusive-Design"-Küche</li>
+							<li>Vernetzte Smart-Home-Küchengeräte</li>
+							<li>Manuell einstellbarer Esstisch</li>
+						</ul>
+						<p class="blink_me" style="text-align: center">Klicken Sie hier, um das Overlay zu verlassen.</p>
+					</div>
+				</div>
+			
+			</div>
+		
+		</section>
+		
+		<section id="section-right">
+		
+			<div class="box w3-animate-opacity" id="box-schlafen" style="display:none">
+				<h5>Schlafzimmer-Technologien:</h5>
+				<ul>
+					<li>
+						Elektromotorisch einstellbares Niederflur-Pflegebett
+						<br>
+						<img src="img/fcl-niederflur-pflegebett.jpg" style="height: 70px" />
+					</li>
+					<li>
+						PAUL "Persönlicher Assistent für Unterstütztes Leben" Senioren-PC
+						<br>
+						<img src="img/fcl-paul.jpg" style="height: 70px" />
+					</li>
+					<li>
+						Sensor-Fußmatten und diverse weitere Sensoren
+						<br>
+						<img src="img/fcl-sensorfussmatte-bett.jpg" style="height: 70px" />
+					</li>
+				</ul>
+				<p class="blink_me" style="color: green">Klicken Sie auf den Button, um mehr zu erfahren!</p>
+			</div>
+			
+			<div class="box w3-animate-opacity" id="box-flur" style="display:none">
+				<h5>Flur-Technologien:</h5>
+				<ul>
+					<li>
+						LED-Lichtfeedbacksystem und Audio-Feedbacksystem
+						<br>
+						<img src="img/fcl-led-panels.jpg" style="height: 70px" />
+					</li>
+					<li>
+						"Circadianes" Tageslicht-Beleuchtungssystem der Fa. Waldmann
+						<br>
+						<img src="img/fcl-circadiane-tageslichtnachfuehrung.jpg" style="height: 70px" />
+					</li>
+					<li>
+						Schutzengelsystem und diverse weitere Sensoren
+						<br>
+						<img src="img/fcl-schutzengelsystem.jpg" style="height: 70px" />
+					</li>
+				</ul>
+				<p class="blink_me" style="color: green">Klicken Sie auf den Button, um mehr zu erfahren!</p>
+			</div>
+			
+			<div class="box w3-animate-opacity" id="box-bad" style="display:none">
+				<h5>Badezimmer-Technologien:</h5>
+				<ul>
+					<li>
+						Elektromotorisch einstellbare Pflege-Badewanne
+						<br>
+						<img src="img/fcl-badewanne.jpg" style="height: 70px" />
+					</li>
+					<li>
+						"Smart Mirror"-Display im Spiegel
+						<br>
+						<img src="img/fcl-badezimmer.jpg" style="height: 70px" />
+					</li>
+					<li>
+						Sensor-Fußmatten und diverse weitere Sensoren/Aktoren
+						<br>
+						<img src="img/fcl-sensorfussmatte-bad.jpg" style="height: 70px" />
+					</li>
+				</ul>
+				<p class="blink_me" style="color: green">Klicken Sie auf den Button, um mehr zu erfahren!</p>
+			</div>
+			
+			<div class="box w3-animate-opacity" id="box-wohnen" style="display:none">
+				<h5>Wohnzimmer-Technologien:</h5>
+				<ul>
+					<li>
+						SensFloor 2D und Ubisense 3D Indoor-Lokalisierungssysteme
+						<br>
+						<img src="img/fcl-sensfloor.jpg" style="height: 70px" />
+					</li>
+					<li>
+						Multitouch Surface Computer als Wohnzimmertisch
+						<br>
+						<img src="img/fcl-surface-pixelsense-tisch.jpg" style="height: 70px" />
+					</li>
+					<li>
+						Telepräsenz- und Companion-Roboter
+						<br>
+						<img src="img/fcl-scitos.jpg" style="height: 70px" />
+					</li>
+				</ul>
+				<p class="blink_me" style="color: green">Klicken Sie auf den Button, um mehr zu erfahren!</p>
+			</div>
+			
+			<div class="box w3-animate-opacity" id="box-essen" style="display:none">
+				<h5>Esszimmer-Technologien:</h5>
+				<ul>
+					<li>
+						Elektromotorisch einstellbare "Inclusive-Design"-Küche
+						<br>
+						<img src="img/fcl-inclusive-design-kueche.jpg" style="height: 70px" />
+					</li>
+					<li>
+						Vernetzte Smart-Home-Küchengeräte
+						<br>
+						<img src="img/fcl-herdabschaltung.jpg" style="height: 70px" />
+					</li>
+					<li>
+						Manuell einstellbarer Esstisch
+						<br>
+						<img src="img/fcl-esstisch.jpg" style="height: 70px" />
+					</li>
+				</ul>
+				<p class="blink_me" style="color: green">Klicken Sie auf den Button, um mehr zu erfahren!</p>
+			</div>
+	
+		</section>
+		
+	</body>
+	
+</html>

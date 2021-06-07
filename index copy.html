@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+		<meta name="description" content="FCL-Info-Plan">
+		<meta name="author" content="Alex">
+		<!-- <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1,minimum-scale=1, shrink-to-fit=no, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="translucent-black">
+		<meta name="apple-mobile-web-app-title" content="Livre Audio - Se presenter"> -->
+		
+		<title>Future Care Lab Info-Plan</title>
+		
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<!-- <link rel="shortcut icon" href="img/logo.ico"> -->
+		
+		<script type="text/javascript" src="logic.js"></script>
+	</head>
+	
+	<body>
+	
+		<!-- <h1 style="text-align: center; font-family: Arial,Helvetica Neue,Helvetica,sans-serif;">Das Future Care Lab AAL-Smart-Home</h1> -->
+	
+		<div class="parent">
+		
+			<img src="img/fcl-bg.png" />
+			
+			<!-- Alte Variante mit Ankern und Images -->
+			<!-- <div class="inner" id="touch-button-schlafen"> -->
+				<!-- <a href="" onClick="turnOverlayOn()"><img class="touch-button" src="touch-button.png" /></a> -->
+			<!-- </div> -->
+			
+			<!-- Ab hier neue Variante mit Buttons -->
+			<button class="inner touch-button" id="touch-button-schlafen" title="Schlafzimmer" onClick="turnOverlayOn('overlay-schlafen')"></button>
+			
+			<button class="inner touch-button" id="touch-button-flur" title="Flur" onClick="turnOverlayOn('overlay-flur')"></button>
+			
+			<button class="inner touch-button" id="touch-button-bad" title="Badezimmer" onClick="turnOverlayOn('overlay-bad')"></button>
+			
+			<button class="inner touch-button" id="touch-button-wohnen" title="Wohnzimmer" onClick="turnOverlayOn('overlay-wohnen')"></button>
+			
+			<button class="inner touch-button" id="touch-button-essen" title="Esszimmer" onClick="turnOverlayOn('overlay-essen')"></button>
+			
+			<div class="overlay" id="overlay-schlafen" onClick="turnOverlayOff()">
+				<div class="overlay-text">
+					<h1>FCL-Schlafzimmer</h1>
+					<img src="img/fcl-schlafen.jpg" />
+					<ul>
+						<li>Elektromotorisch einstellbares Niederflur-Pflegebett</li>
+						<li>PAUL "Persönlicher Assistent für Unterstütztes Leben" Senioren-PC</li>
+						<li>Sensor-Fußmatten und diverse weitere Sensoren</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="overlay" id="overlay-flur" onClick="turnOverlayOff()">
+				<div class="overlay-text">
+					<h1>FCL-Flur</h1>
+					<img style="float: left; display: block;" src="img/fcl-flur.jpg" />
+					<ul style="margin-left: 300px;">
+						<li>LED-Lichtfeedbacksystem und Audio-Feedbacksystem</li>
+						<li>"Circadianes" Tageslicht-Beleuchtungssystem</li>
+						<li>Schutzengelsystem und diverse weitere Sensoren</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="overlay" id="overlay-bad" onClick="turnOverlayOff()">
+				<div class="overlay-text">
+					<h1>FCL-Badezimmer</h1>
+					<img src="img/fcl-bad.jpg" />
+					<ul>
+						<li>Elektromotorisch einstellbare Pflege-Badewanne</li>
+						<li>"Smart Mirror"-Display im Spiegel</li>
+						<li>Sensor-Fußmatten und diverse weitere Sensoren/Aktoren</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="overlay" id="overlay-wohnen" onClick="turnOverlayOff()">
+				<div class="overlay-text">
+					<h1>FCL-Wohnbereich</h1>
+					<img src="img/fcl-wohnen.jpg" />
+					<ul>
+						<li>SensFloor 2D und Ubisense 3D Indoor-Lokalisierungssysteme</li>
+						<li>Multitouch Surface Computer als Wohnzimmertisch</li>
+						<li>Telepräsenz- und Companion-Roboter</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="overlay" id="overlay-essen" onClick="turnOverlayOff()">
+				<div class="overlay-text">
+					<h1>FCL-Essbereich</h1>
+					<img src="img/fcl-essen.jpg" />
+					<ul>
+						<li>Elektromotorisch einstellbare "Inclusive-Design"-Küche</li>
+						<li>Vernetzte Smart-Home-Küchengeräte</li>
+						<li>Manuell einstellbarer Esstisch</li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+		
+	</body>
+	
+</html>

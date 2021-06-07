@@ -1,0 +1,5 @@
+parent 750 x 654
+
+child max. 640 x 480
+
+better 600 x 300

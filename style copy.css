@@ -1,0 +1,103 @@
+/* Use this, if you want a centered div - note: width must be set accordingly */
+.center-div {
+	margin: 0 auto;
+	width: 750px; /* Center div width must be set; here it equals the parent divs absolute size (set by image) */
+	/* height: 1000px; */
+	/* background-color: #ccc;
+	border-radius: 3px; */
+}
+
+.parent {
+    /* width: 200px; */
+    /* height: 200px; */
+    position: absolute;
+    z-index: 0;
+}
+
+.inner {
+    position: absolute;
+    z-index: 1;
+    /* bottom: 50%; */
+    /* right: 50%; */
+}
+
+.touch-button {
+	width: 60px;
+	height: 60px;
+	background: url(img/touch-button.png) no-repeat;
+}
+
+/* Positions the respective touch-buttons inside of the "inner"-class */
+/* #touch-button-schlafen.inner { */
+#touch-button-schlafen {
+	top: 20%;
+	left: 27%;
+}
+
+#touch-button-flur {
+	top: 50%;
+	left: 27%;
+}
+
+#touch-button-bad {
+	top: 70%;
+	left: 27%;
+}
+
+#touch-button-wohnen {
+	top: 33%;
+	left: 71%;
+}
+
+#touch-button-essen {
+	top: 75%;
+	left: 71%;
+}
+
+/*img.touch-button:active {
+	/*box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);*/
+	/*box-shadow: 0 0 5px 10px rgba(0, 140, 186, 0.5);
+}*/
+
+/*img.touch-button:hover {
+	/*box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);*/
+	/*box-shadow: 0 0 5px 10px rgba(0, 140, 186, 0.5);
+}*/
+
+.touch-button:hover, .touch-button:active {
+	background: url(img/touch-button-active.png) no-repeat;
+}
+
+/* Overlay that covers complete content area "below" */
+.overlay, #overlay-schlafen, #overlay-flur, #overlay-schlafen, #overlay-wohnen, #overlay-essen {
+    position: absolute; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    /* width: 100%; /* Full width (cover the whole page) */
+    /* height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+.overlay-text {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    /*font-size: 25px;*/
+    color: white;
+    /*transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);*/
+	font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+}
+
+/* Button is needed for JS-overlay-OnClick-listener */
+button {
+	padding: 0;
+	border: none;
+	/* background: none; */
+	cursor: pointer;
+}
